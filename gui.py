@@ -16,10 +16,14 @@ class Ui_MainWindow(object):
         """Main widget"""
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         MainWindow.setCentralWidget(self.centralwidget)
-        """Button Start"""
-        self.start = QtWidgets.QPushButton(self.centralwidget)
-        self.start.setGeometry(QtCore.QRect(625, 400, 100, 40))
-        self.start.setText("Start")
+        """Button open"""
+        self.open_txt = QtWidgets.QPushButton(self.centralwidget)
+        self.open_txt.setGeometry(QtCore.QRect(625, 400, 100, 40))
+        self.open_txt.setText("Open")
+        """Button save"""
+        self.save = QtWidgets.QPushButton(self.centralwidget)
+        self.save.setGeometry(QtCore.QRect(525, 400, 100, 40))
+        self.save.setText("Save")
 
         """Menu"""
         self.mainMenu = self.menuBar()
@@ -39,4 +43,8 @@ class Ui_MainWindow(object):
         exit = QAction(QIcon('power.png'), 'Exit', self)
         exit.triggered.connect(self.close)
         fileMenu.addAction(exit)
+
+        """Main text field"""
+        self.main_field = QtWidgets.QTextEdit(self.centralwidget)
+        self.main_field.setGeometry(QtCore.QRect(0, 0, self.width, self.height - 100))
 
